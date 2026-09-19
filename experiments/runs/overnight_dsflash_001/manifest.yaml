@@ -1,0 +1,65 @@
+experiment_id: overnight_dsflash_20260914
+status: complete
+date_utc: 2026-09-14
+completed_at_utc: 2026-09-16T07:26:10Z
+repository_commit: 98cb2977f068600d0ae66747b3521597a7a38dc0
+
+scope:
+  tasks: 42_official_single_turn
+  conditions: [no_skill, skill_text]
+  runs: 84
+  repetitions: 1
+  aggregation: paired_task_and_macro_over_14_skills
+  primary_metric: rubric_reward
+
+policy:
+  id: Qwen/Qwen3-4B-Instruct-2507
+  revision: cdbee75f17c01a7cc42f958dc650907174af0554
+  execution: local_weight_level
+  harness: transformers_chat_template
+  device: cuda:1
+  seed: 20260914
+  temperature: 0.7
+  top_p: 0.9
+  max_new_tokens: 4096
+
+judge:
+  provider_model_id: deepseek-v4-flash-0731
+  protocol: benchflow_0.6.7_pass_fail_proportion
+  temperature: 0
+  adaptive_max_tokens: [2048, 4096, 8192]
+  concurrency: 2
+  invalid_response_policy: missing_and_retry
+
+paper_alignment:
+  aligned:
+    - official_42_tasks
+    - paired_no_skill_with_skill
+    - task_specific_rubrics
+    - single_run_point_estimates
+    - per_skill_and_overall_macro_aggregation
+  not_aligned:
+    - paper_used_opencode_and_docker
+    - paper_policy_was_qwen3.7_plus_or_deepseek_v4_flash
+    - this_run_is_qwen3_4b_weight_level_baseline
+
+runtime:
+  directory: artifacts/overnight_dsflash_20260914
+  log: logs/overnight_dsflash_20260914.log
+  pid_file: logs/overnight_dsflash_20260914.pid
+  generation_active_seconds: 5325
+  scoring_active_seconds_approx: 816
+  active_runtime_seconds_approx: 6141
+  historical_error_records: 4
+  final_valid_unique_scores: 84
+
+result:
+  no_skill_rubric: 0.5761526833
+  with_skill_rubric: 0.8814814815
+  rubric_lift: 0.3053287982
+  normalized_gain: 0.7203744984
+  positive_lift_skills: 13
+  zero_lift_skills: 1
+  negative_lift_skills: 0
+  no_skill_truncated: 3
+  with_skill_truncated: 1

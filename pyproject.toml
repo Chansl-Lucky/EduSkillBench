@@ -1,0 +1,57 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "eduskillbench-rlvr"
+version = "0.1.0"
+description = "Rubric-guided RL and GRPO experiments for EduSkillBench"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "httpx>=0.28,<1",
+  "numpy>=2.0,<3",
+  "pandas>=2.2,<4",
+  "pydantic>=2.10,<3",
+  "pyyaml>=6.0,<7",
+  "scikit-learn>=1.5,<2",
+  "scipy>=1.14,<2",
+  "tenacity>=9.0,<10",
+]
+
+[project.optional-dependencies]
+train = [
+  "accelerate>=1.4,<2",
+  "bitsandbytes>=0.45,<1",
+  "datasets>=3.2,<5",
+  "peft>=0.14,<1",
+  "torch==2.6.0",
+  "transformers>=4.51,<5",
+  "trl>=0.19,<1",
+]
+eval = [
+  "benchflow==0.6.7",
+]
+dev = [
+  "pytest>=8.3,<10",
+  "pytest-asyncio>=0.25,<2",
+  "ruff>=0.9,<1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["code/rlvr"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu124" }

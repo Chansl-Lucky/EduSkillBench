@@ -1,0 +1,19 @@
+experiment_id: paper_aligned_qwen3_4b_001
+status: prepared_not_started
+prepared_at_utc: 2026-09-17T08:23:00Z
+policy_model: qwen3-4b-instruct-2507-cdbee75
+primary_judge_model: qwen3-4b-instruct-2507-cdbee75
+audit_judge_model: deepseek-v4-flash-0731
+input_manifest: artifacts/paper_aligned_qwen3_4b_001/input_manifest.json
+jobs_dir: jobs/paper-aligned-qwen3-4b-001
+log: logs/paper_aligned_qwen3_4b_001.log
+started: false
+prepared_runtime:
+  vllm: 0.8.5.post1
+  transformers: 4.57.6
+  torch: 2.6.0+cu124
+notes:
+  - Do not launch until reward_feasibility_002 has ended and GPU 1 is confirmed free.
+  - The official 42 cases are evaluation-only and must never enter training.
+  - Primary scores use the same exact policy weights as judge for paper alignment.
+  - DeepSeek V4 Flash is a post-hoc independent audit and never supplies the primary score.

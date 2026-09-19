@@ -1,0 +1,31 @@
+experiment_id: calibration_001_hinge_elapsed_time
+date_utc: 2026-09-14
+repository_commit: 98cb2977f068600d0ae66747b3521597a7a38dc0
+
+candidate_generation:
+  model: Atria-Dawn-Preview
+  requested: 3
+  schema_valid: 3
+  accepted_for_pipeline_smoke: 1
+  accepted_for_training: 0
+  source: artifacts/calibration_hinge_candidates.jsonl
+
+leakage_screen:
+  method: character_3_to_5_gram_tfidf_cosine
+  threshold: 0.72
+  maximum_similarities: [0.3731469606, 0.2071996601, 0.2751101297]
+
+policy:
+  id: Qwen/Qwen3-4B-Instruct-2507
+  revision: cdbee75f17c01a7cc42f958dc650907174af0554
+  seed: 20260914
+  do_sample: false
+
+controlled_comparison:
+  task_id: judge_calibration__hinge-question-designer__003
+  no_skill_max_new_tokens: 2048
+  skill_caps_tested: [2048, 4096]
+  judges: [minimax-m3, Atria-Dawn-Preview]
+
+decision: no_go_grpo
+next_gate: multi_prompt_multi_seed_and_human_pairwise_calibration

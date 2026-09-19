@@ -1,0 +1,58 @@
+experiment_id: paper_aligned_qwen3_4b_001
+status: prepared_not_started
+
+model:
+  hf_id: Qwen/Qwen3-4B-Instruct-2507
+  revision: cdbee75f17c01a7cc42f958dc650907174af0554
+  local_path: /home/gpuuser/csl/models/Qwen3-4B-Instruct-2507
+  served_name: qwen3-4b-instruct-2507-cdbee75
+  benchflow_model: vllm/qwen3-4b-instruct-2507-cdbee75
+
+serving:
+  backend: vllm
+  host: docker_bridge_gateway
+  port: 8000
+  cuda_visible_devices: "1"
+  dtype: bfloat16
+  max_model_len: 32768
+  gpu_memory_utilization: 0.80
+  enable_auto_tool_choice: true
+  tool_call_parser: hermes
+  reasoning_parser: null
+
+evaluation:
+  framework: benchflow==0.6.7
+  agent: opencode
+  opencode_version: 1.18.11
+  sandbox: docker
+  concurrency: 1
+  timeout_sec: 600
+  conditions: [no_skill, with_skill]
+  task_count: 42
+  skill_count: 14
+  official_test_is_evaluation_only: true
+
+judging:
+  primary:
+    model: qwen3-4b-instruct-2507-cdbee75
+    weights_identical_to_policy: true
+    protocol: benchflow_item_pass_fail_proportion
+    input: full_agent_trajectory
+  audit:
+    model: deepseek-v4-flash-0731
+    role: independent_posthoc_audit
+    affects_primary_score: false
+
+comparability:
+  intentionally_aligned:
+    - OpenCode agent harness
+    - callable Skill installation
+    - Docker sandbox
+    - full trajectory judging
+    - model-matched primary judge
+    - BenchFlow PASS/FAIL rubric aggregation
+  intentional_change:
+    - policy_and_primary_judge_are_local_Qwen3_4B_Instruct_2507
+    - both_arms_use_uniform_600_second_timeout
+  separate_bridge_result:
+    - prior_local_transformers_system_prompt_baseline

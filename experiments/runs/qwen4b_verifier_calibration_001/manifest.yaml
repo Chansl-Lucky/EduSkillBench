@@ -1,0 +1,58 @@
+experiment_id: qwen4b_verifier_calibration_001
+status: complete_failed_reward_gate
+created_at_utc: 2026-09-17T11:05:00Z
+objective: evaluate_local_qwen3_4b_as_continuous_rubric_verifier
+frozen_inputs:
+  prompts: artifacts/reward_feasibility_001/prompts.jsonl
+  prompt_count: 42
+  rollouts: artifacts/reward_feasibility_001/rollouts.jsonl
+  rollout_count: 168
+judge:
+  model: qwen3-4b-instruct-2507-cdbee75-local
+  model_path: /home/gpuuser/csl/models/Qwen3-4B-Instruct-2507
+  revision: cdbee75f17c01a7cc42f958dc650907174af0554
+  protocol: rubric_continuous
+  backend: transformers
+  temperature: 0.0
+runtime:
+  cuda_visible_devices: "1"
+  output: artifacts/qwen4b_verifier_calibration_001/scores.jsonl
+  log: logs/qwen4b_verifier_calibration_001.log
+comparison:
+  deepseek_snapshot: artifacts/reward_feasibility_002/frozen/dense_scores_before_qwen_20260917T110323Z.jsonl
+  shared_valid_deepseek_cells: 121
+notes:
+  - This run never overwrites the DeepSeek scores.
+  - Official benchmark cases are not used; inputs are the independent judge_calibration split.
+smoke_result:
+  attempted: 20
+  valid: 19
+  full_score: 14
+  shared_with_deepseek: 18
+  qwen_mean: 0.9383333333
+  deepseek_mean: 0.7362222222
+  pearson: 0.3703714819
+  mean_absolute_difference: 0.2153333333
+  preliminary_interpretation: qwen4b_is_much_more_lenient_and_not_yet_approved_as_training_reward
+final_result:
+  completed_at_utc: 2026-09-17T11:37:46Z
+  valid: 166
+  expected: 168
+  json_protocol_success_rate: 0.9880952381
+  mean_reward: 0.9613
+  full_score_rate: 0.8012
+  complete_groups: 40
+  nontrivial_group_fraction_at_range_0_2: 0.025
+  all_tie_group_fraction: 0.775
+  mean_group_std: 0.0172016911
+  shared_with_deepseek: 120
+  shared_qwen_mean: 0.9642166667
+  shared_deepseek_mean: 0.7873458333
+  pearson: 0.2960167321
+  spearman: 0.3114080267
+  mean_bias_qwen_minus_deepseek: 0.1768708333
+  mean_absolute_difference: 0.1828208333
+decision:
+  approved_as_grpo_reward: false
+  reason: severe_ceiling_and_group_tie_collapse
+  allowed_use: diagnostic_rescoring_only

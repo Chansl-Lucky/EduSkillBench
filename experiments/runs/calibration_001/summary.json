@@ -1,0 +1,32 @@
+{
+  "experiment_id": "calibration_001_hinge_elapsed_time",
+  "task_id": "judge_calibration__hinge-question-designer__003",
+  "results": {
+    "no_skill_2048": {
+      "completion_tokens": 1516,
+      "truncated": false,
+      "minimax_rubric": 0.595,
+      "minimax_mixed": 0.65575,
+      "atria_rubric": 0.595,
+      "atria_mixed": 0.65575
+    },
+    "skill_2048": {
+      "completion_tokens": 2048,
+      "truncated": true,
+      "minimax_rubric": 0.41,
+      "minimax_mixed": 0.3235,
+      "atria_rubric": 0.4775,
+      "atria_mixed": 0.380875
+    },
+    "skill_4096": {
+      "completion_tokens": 3447,
+      "truncated": false,
+      "minimax_rubric": 0.73,
+      "minimax_mixed": 0.7705,
+      "atria_rubric": 0.625,
+      "atria_mixed": 0.68125
+    }
+  },
+  "mechanism_observation": "The Skill condition becomes positive relative to No-Skill for both judges after removing policy-output truncation.",
+  "decision": "no_go_grpo"
+}

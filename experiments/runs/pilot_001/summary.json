@@ -1,0 +1,18 @@
+{
+  "experiment_id": "pilot_001_hinge_question",
+  "judge_model": "minimax-m3",
+  "valid_scores": 6,
+  "total_scores": 6,
+  "adaptive_expansions": 2,
+  "max_budget_used": 4096,
+  "mean": {
+    "no_skill_mixed_reward": 0.7223333333,
+    "skill_text_mixed_reward": 0.6453333333,
+    "mixed_delta": -0.077,
+    "no_skill_rubric_reward": 0.6733333333,
+    "skill_text_rubric_reward": 0.72,
+    "rubric_delta": 0.0466666667
+  },
+  "decision": "no_go_grpo",
+  "reason": "Reward protocol engineering works, but cross-judge direction and repeatability are not calibrated."
+}

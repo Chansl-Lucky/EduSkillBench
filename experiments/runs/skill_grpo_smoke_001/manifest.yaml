@@ -1,0 +1,49 @@
+experiment_id: skill_grpo_smoke_001
+status: complete_smoke_passed
+objective: validate_one_step_skill_conditioned_grpo_with_ark_deepseek_v4_flash
+policy:
+  model: Qwen/Qwen3-4B-Instruct-2507
+  revision: cdbee75f17c01a7cc42f958dc650907174af0554
+  trainable_parameters: lora_r8_attention_projections
+conditioning:
+  matched_skill_injected: true
+  injection_mode: system_context
+data:
+  train_prompts: artifacts/skill_grpo_smoke_001/train_prompts.jsonl
+  split: train
+  official_test_used_for_training: false
+training:
+  algorithm: GRPO
+  max_steps: 1
+  num_generations: 4
+  temperature: 0.9
+  top_p: 0.9
+  max_completion_length: 768
+judge:
+  provider: volcengine_ark
+  base_url: https://ark.cn-beijing.volces.com/api/v3
+  model: deepseek-v4-flash-260425
+  protocol: rubric_continuous
+  api_key_persisted_in_repo: false
+notes:
+  - This is an engineering smoke test, not the formal GRPO result.
+  - The Ark account can see newer Flash models but has not activated them.
+result:
+  completed_at_utc: 2026-09-18T06:45:30Z
+  train_wall_seconds: 107.113
+  optimizer_steps: 1
+  train_group_reward_min: 0.2775
+  train_group_reward_max: 0.7960
+  train_group_reward_range: 0.5185
+  adapter: artifacts/skill_grpo_smoke_001/final_adapter
+  held_out_dev:
+    task_count: 1
+    base_mixed_reward: 0.655
+    grpo_mixed_reward: 0.723
+    base_rubric_reward: 0.80
+    grpo_rubric_reward: 0.88
+    both_truncated_at_tokens: 768
+decision:
+  engineering_chain_passed: true
+  formal_improvement_claim_allowed: false
+  reason: one_step_one_dev_case_and_both_outputs_truncated

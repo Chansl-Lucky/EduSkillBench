@@ -1,0 +1,71 @@
+experiment_id: skill_grpo_formal_001
+status: complete
+started_at_utc: 2026-09-18T06:57:24Z
+resumed_at_utc: 2026-09-19T00:15:58Z
+resume_from: artifacts/skill_grpo_formal_001/checkpoint/checkpoint-20
+objective: train_qwen3_4b_to_use_all_14_matched_educational_skills
+policy:
+  model: Qwen/Qwen3-4B-Instruct-2507
+  revision: cdbee75f17c01a7cc42f958dc650907174af0554
+  adapter: lora_r8_attention_projections
+conditioning:
+  matched_skill_injected_during_training: true
+  matched_skill_injected_during_primary_eval: true
+  harness: transformers_system_context
+data:
+  skills: 14
+  train_prompts_per_skill: 5
+  total_train_prompts: 70
+  dev_prompts_per_skill: 2
+  total_dev_prompts: 28
+  official_test_prompts: 42
+  official_test_used_for_training: false
+training:
+  algorithm: GRPO
+  optimizer_steps: 70
+  generations_per_step: 4
+  max_completion_length: 2048
+  temperature: 0.9
+  top_p: 0.9
+judge:
+  provider: volcengine_ark
+  model: deepseek-v4-flash-260425
+  training_protocol: rubric_continuous
+  final_protocol: paper_pass_fail
+  api_key_persisted: false
+evaluation:
+  conditions:
+    - base_qwen4b_no_skill
+    - base_qwen4b_plus_skill
+    - grpo_qwen4b_plus_skill
+  primary_comparison: base_qwen4b_plus_skill_vs_grpo_qwen4b_plus_skill
+  official_generation_max_new_tokens: 4096
+  bootstrap_samples: 20000
+  human_review: false
+notes:
+  - This aligns task, Skill, rubric, decoding, and Judge across the paired final comparison.
+  - It remains a local Transformers harness experiment rather than an OpenCode trajectory reproduction.
+result:
+  completed_at_utc: 2026-09-19T03:37:54Z
+  train_steps: 70
+  training_reward_records: 280
+  training_groups_nonzero_range: 55
+  training_groups_all_tie: 15
+  training_groups_range_at_least_0_2: 8
+  mean_training_group_range: 0.1016357143
+  official_paired_tasks: 42
+  base_no_skill_mean: 0.6434666667
+  base_skill_mean: 0.9062690476
+  base_skill_lift: 0.2628023810
+  grpo_skill_mean: 0.9388095238
+  paired_mean_delta: 0.0325404762
+  bootstrap_95_ci: [-0.0047619048, 0.0714285714]
+  positive_tie_negative_tasks: [9, 29, 4]
+  positive_tie_negative_skills: [6, 6, 2]
+  base_truncated: 1
+  grpo_truncated: 1
+decision:
+  engineering_run_complete: true
+  point_estimate_positive: true
+  statistically_stable_positive_gain: false
+  reason: bootstrap_interval_crosses_zero

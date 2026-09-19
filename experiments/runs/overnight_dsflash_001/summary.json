@@ -1,0 +1,23 @@
+{
+  "experiment_id": "overnight_dsflash_20260914",
+  "status": "complete",
+  "completed_at_utc": "2026-09-16T07:26:10Z",
+  "judge_model": "deepseek-v4-flash-0731",
+  "judge_protocol": "benchflow_0.6.7_pass_fail_proportion",
+  "expected_runs": 84,
+  "valid_unique_runs": 84,
+  "historical_error_records": 4,
+  "results": {
+    "no_skill_rubric": 0.5761526832955405,
+    "with_skill_rubric": 0.8814814814814815,
+    "rubric_lift": 0.30532879818594105,
+    "normalized_gain": 0.7203744984395899,
+    "positive_lift_skills": 13,
+    "zero_lift_skills": 1,
+    "negative_lift_skills": 0,
+    "no_skill_truncated": 3,
+    "with_skill_truncated": 1
+  },
+  "active_runtime_seconds_approx": 6141,
+  "recommended_future_time_budget_hours": 3
+}

@@ -1,0 +1,39 @@
+experiment_id: pilot_001_hinge_question
+date_utc: 2026-09-14
+repository_commit: 98cb2977f068600d0ae66747b3521597a7a38dc0
+
+policy:
+  id: Qwen/Qwen3-4B-Instruct-2507
+  revision: cdbee75f17c01a7cc42f958dc650907174af0554
+  local_path: /home/gpuuser/csl/models/Qwen3-4B-Instruct-2507
+  dtype: bfloat16
+  device: cuda:1
+
+generation:
+  seed: 20260914
+  do_sample: false
+  max_new_tokens: 2048
+  conditions: [no_skill, skill_text]
+
+tasks:
+  source: data/single_turn_tasks.csv
+  ids:
+    - hinge-question-designer__01
+    - hinge-question-designer__02
+    - hinge-question-designer__03
+  use: pipeline_smoke_only
+  leakage_warning: official_test_tasks_must_not_be_used_for_training_or_checkpoint_selection
+
+judge_gateway:
+  base_url: https://discovery-api.intern-ai.org.cn/v1
+  credential_storage: process_environment_only
+  preflight_models_endpoint: true
+  adaptive_max_tokens: [2048, 4096, 8192]
+  invalid_remote_response_policy: missing_reward
+
+artifacts:
+  rollouts: artifacts/baseline_pilot_task1_2048.jsonl
+  minimax_adaptive_scores: artifacts/pilot001_minimax_adaptive_task1.jsonl
+
+decision: no_go_grpo
+reason: cross_judge_direction_and_repeatability_gates_not_met

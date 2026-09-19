@@ -1,0 +1,25 @@
+model:
+  id: Qwen/Qwen3-4B-Instruct-2507
+  revision: cdbee75f17c01a7cc42f958dc650907174af0554
+  local_path: /home/gpuuser/csl/models/Qwen3-4B-Instruct-2507
+  license: Apache-2.0
+
+runtime:
+  python: "3.12"
+  torch: 2.6.0+cu124
+  preferred_cuda_visible_devices: "1"
+  dtype: bfloat16
+  attention: sdpa
+
+baseline:
+  seed: 20260914
+  temperature: 0.7
+  top_p: 0.9
+  max_new_tokens: 1024
+  conditions:
+    - no_skill
+    - skill_text
+
+notes:
+  - The official_test split is evaluation-only and must never enter GRPO or SFT data.
+  - skill_text injects the released SKILL.md and is not identical to the OpenCode agent harness.

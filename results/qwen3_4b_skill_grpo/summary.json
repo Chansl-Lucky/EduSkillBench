@@ -1,0 +1,36 @@
+{
+  "experiment": "Qwen3-4B Skill-conditioned GRPO",
+  "policy_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "harness": "Transformers with full SKILL.md system-context injection",
+  "judge": "deepseek-v4-flash-260425 via Volcengine Ark",
+  "final_protocol": "BenchFlow-style rubric item PASS/FAIL proportion",
+  "official_tasks": 42,
+  "skills": 14,
+  "train_prompts": 70,
+  "grpo_steps": 70,
+  "generations_per_step": 4,
+  "base_no_skill_mean": 0.6434666666666666,
+  "base_with_skill_mean": 0.9062690476190474,
+  "skill_lift": 0.26280238095238095,
+  "grpo_with_skill_mean": 0.9388095238095238,
+  "grpo_lift_over_base_skill": 0.03254047619047619,
+  "grpo_lift_bootstrap_95_ci": [
+    -0.004761904761904761,
+    0.07142857142857142
+  ],
+  "task_positive_tie_negative": [
+    9,
+    29,
+    4
+  ],
+  "skill_positive_tie_negative": [
+    6,
+    6,
+    2
+  ],
+  "training_groups": 70,
+  "training_groups_nonzero_range": 55,
+  "training_groups_range_at_least_0_2": 8,
+  "mean_training_group_range": 0.10163571428571429,
+  "interpretation": "Positive point estimate; the paired bootstrap interval crosses zero, so this run does not establish a statistically stable positive GRPO effect."
+}

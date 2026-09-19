@@ -1,0 +1,51 @@
+experiment_id: reward_feasibility_001
+status: complete
+launched_at_utc: 2026-09-16T07:38:13Z
+completed_at_utc: 2026-09-16T12:10:04Z
+scope:
+  skills: 14
+  generated_prompts_per_skill: 3
+  prompts: 42
+  rollout_seeds: [20260915, 20260916, 20260917, 20260918]
+  expected_rollouts: 168
+  condition: no_skill
+prompt_generator:
+  model: Atria-Dawn-Preview
+  split: judge_calibration
+  official_similarity_threshold: 0.72
+policy:
+  id: Qwen/Qwen3-4B-Instruct-2507
+  revision: cdbee75f17c01a7cc42f958dc650907174af0554
+  temperature: 0.7
+  top_p: 0.9
+  max_new_tokens: 4096
+judge:
+  model: deepseek-v4-flash-0731
+  protocol: benchflow_0.6.7_pass_fail_proportion
+  adaptive_max_tokens: [2048, 4096, 8192]
+automatic_gates:
+  json_protocol_success_rate: 0.99
+  nontrivial_group_fraction: 0.70
+pending_manual_gates:
+  - subject_matter_review
+  - identical_response_repeatability
+  - human_pairwise_agreement
+  - length_and_style_bias_audit
+runtime:
+  directory: artifacts/reward_feasibility_001
+  log: logs/reward_feasibility_001.log
+  pid_file: logs/reward_feasibility_001.pid
+  actual_wall_hours: 4.53
+  prompt_generation_minutes: 36.6
+  rollout_minutes: 171.2
+  judge_and_retry_minutes: 63.8
+result:
+  valid_scores: 168
+  json_protocol_success_rate: 1.0
+  nontrivial_group_fraction: 0.5
+  all_tie_group_fraction: 0.3095238095
+  mean_group_std: 0.0868562373
+  truncated_rollouts: 4
+  truncation_rate: 0.0238095238
+  automatic_variance_gate: failed
+  decision: no_go_direct_grpo_pending_reward_densification_and_manual_gates

@@ -1,0 +1,36 @@
+experiment_id: qwen4b_skill_baseline_rescore_001
+status: complete_with_protocol_failures
+created_at_utc: 2026-09-18T02:46:00Z
+objective: judge_sensitivity_analysis_on_frozen_skill_baseline
+policy:
+  model: Qwen/Qwen3-4B-Instruct-2507
+  seed: 20260914
+frozen_rollouts:
+  path: artifacts/overnight_dsflash_20260914/rollouts.jsonl
+  count: 84
+  conditions: [no_skill, skill_text]
+judge:
+  model: qwen3-4b-instruct-2507-cdbee75-local
+  protocol: rubric_continuous
+  approved_as_training_reward: false
+outputs:
+  scores: artifacts/qwen4b_skill_baseline_rescore_001/scores.jsonl
+  summary: artifacts/qwen4b_skill_baseline_rescore_001/summary/overall.json
+  log: logs/qwen4b_skill_baseline_rescore_001.log
+interpretation:
+  role: diagnostic_judge_sensitivity_analysis
+  replaces_deepseek_primary_result: false
+final_result:
+  completed_at_utc: 2026-09-18T03:03:37Z
+  expected: 84
+  valid: 80
+  protocol_failures: 4
+  no_skill_valid: 39
+  skill_text_valid: 41
+  no_skill_rubric_mean: 0.8807692308
+  skill_text_rubric_mean: 0.9951219512
+  provisional_rubric_lift: 0.1143527205
+  complete_skill_pairs: 11
+decision:
+  usable_as_primary_result: false
+  reason: incomplete_cells_and_unapproved_ceiling_collapsed_judge

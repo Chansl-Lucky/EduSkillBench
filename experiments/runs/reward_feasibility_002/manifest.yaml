@@ -1,0 +1,48 @@
+experiment_id: reward_feasibility_002
+status: stopped_quota_exceeded
+launched_at_utc: 2026-09-17T02:35:11Z
+resumed_at_utc: 2026-09-17T07:34:22Z
+objective: increase_group_reward_density_with_continuous_criterion_scores
+frozen_inputs:
+  prompts: artifacts/reward_feasibility_001/prompts.jsonl
+  prompt_count: 42
+  rollouts: artifacts/reward_feasibility_001/rollouts.jsonl
+  rollout_count: 168
+  seeds: [20260915, 20260916, 20260917, 20260918]
+training_reward_candidate:
+  judge: deepseek-v4-flash-0731
+  protocol: rubric_continuous
+  criterion_score_range: [0.0, 1.0]
+  adaptive_max_tokens: [2048, 4096, 8192]
+audit_reward:
+  source: artifacts/reward_feasibility_001/scores.jsonl
+  judge: deepseek-v4-flash-0731
+  protocol: paper_pass_fail
+  immutable: true
+gates:
+  valid_score_rate: 0.99
+  nontrivial_group_fraction_at_range_0_2: 0.70
+  paper_audit_retained: true
+runtime:
+  directory: artifacts/reward_feasibility_002
+  log: logs/reward_feasibility_002.log
+  pid_file: logs/reward_feasibility_002.pid
+  estimated_hours: 1.2
+  safe_window_hours: 2
+recovery:
+  reason: provider_quota_exceeded_after_121_valid_scores
+  preserve_valid_scores: 121
+  concurrency: 1
+  retry_attempts_per_request: 8
+  maximum_retry_delay_seconds: 60
+final_runtime:
+  stopped_at_utc: 2026-09-17T11:03:23Z
+  valid_scores: 121
+  expected_scores: 168
+  missing_scores: 47
+  raw_records_at_snapshot: 732
+  provider_diagnosis_at_2026_09_18:
+    max_tokens_256: http_200
+    max_tokens_512: http_429_quota_exceeded
+    max_tokens_1024: http_429_quota_exceeded
+    max_tokens_2048: http_429_quota_exceeded

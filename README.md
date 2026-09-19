@@ -138,6 +138,27 @@ results/model_overall_summary.json
 results/model_skill_summary.csv
 ```
 
+## Qwen3-4B Skill-Conditioned GRPO Extension
+
+The repository also contains a reproducible three-stage small-model experiment:
+
+```text
+Qwen3-4B Base / No-Skill
+Qwen3-4B Base / With-Skill
+Qwen3-4B GRPO / With-Skill
+```
+
+The extension trains a LoRA policy for 70 GRPO steps over all 14 single-turn Skills, using 70
+independent training prompts and DeepSeek-V4-Flash as the frozen rubric Judge. On the 42 official
+tasks, Qwen3-4B Base / No-Skill scores 0.6435, Base / With-Skill scores 0.9063, and GRPO / With-Skill
+scores 0.9388. Skill injection therefore adds +0.2628 over No-Skill, while GRPO adds a further
++0.0325 over Base / With-Skill. The GRPO paired bootstrap 95% interval is [-0.0048, 0.0714], so
+that final increment is a positive point estimate rather than a statistically stable positive
+effect.
+
+See [the full configuration, commands, results, and limitations](docs/QWEN3_4B_SKILL_GRPO.md).
+Compact machine-readable results are under `results/qwen3_4b_skill_grpo/`.
+
 ## Quick Start
 
 ### Requirements
