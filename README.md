@@ -4,6 +4,23 @@
 
 The benchmark collects publicly available education-oriented Agent Skills, maps them to educational scenarios inspired by EduBench, constructs Skill-aligned tasks and rubrics, and compares **With-Skill** against **No-Skill** execution.
 
+## Qwen3-4B GRPO Experiment: Teacher-facing Summary
+
+For a concise Chinese report covering the conclusion, frozen configuration, three experimental
+conditions, limitations, and reproduction entry points, see:
+
+**[给老师的 Qwen3-4B Skill-GRPO 实验汇报](docs/TEACHER_REPORT_ZH.md)**
+
+| Condition | Mean reward |
+|---|---:|
+| Base / No-Skill | 0.6435 |
+| Base / With-Skill | 0.9063 |
+| GRPO / With-Skill | 0.9388 |
+
+Matched Skill injection contributes **+0.2628** and GRPO contributes a further **+0.0325**. The
+GRPO paired bootstrap 95% interval is `[-0.0048, 0.0714]`; this is a positive point estimate, not
+yet a statistically stable positive effect.
+
 ## Overview
 
 EduSkillBench v1 contains:
