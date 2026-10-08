@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-07T01:18:23+08:00",
+  "phase": "finished_with_judge_failures",
+  "concurrency": 0,
+  "by_arm": {
+    "base": {
+      "target": 263,
+      "evaluated": 252,
+      "execution_or_extraction_failures": 7,
+      "judge_unresolved": 4,
+      "valid_score_mean_secondary": 0.6395912068531117,
+      "fixed_denominator_score": 0.6128402438288371,
+      "failure_zero_note": "unresolved final judge cells count zero only at terminal reporting"
+    },
+    "base_skill": {
+      "target": 263,
+      "evaluated": 259,
+      "execution_or_extraction_failures": 3,
+      "judge_unresolved": 1,
+      "valid_score_mean_secondary": 0.601152172580744,
+      "fixed_denominator_score": 0.5920091737582233,
+      "failure_zero_note": "unresolved final judge cells count zero only at terminal reporting"
+    },
+    "sft": {
+      "target": 263,
+      "evaluated": 246,
+      "execution_or_extraction_failures": 8,
+      "judge_unresolved": 9,
+      "valid_score_mean_secondary": 0.6172764227642277,
+      "fixed_denominator_score": 0.5773764258555133,
+      "failure_zero_note": "unresolved final judge cells count zero only at terminal reporting"
+    }
+  },
+  "pending": 0,
+  "judge_error_categories": {
+    "ValueError": 14
+  }
+}

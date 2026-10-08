@@ -1,0 +1,410 @@
+{
+  "at": "2026-10-08T17:13:06+08:00",
+  "metric": "per-task highest-native-label share, macro over 263, terminal failures zero",
+  "bootstrap": "5000 paired source-cluster resamples, 30 sources, seed 20261005; conditional on stored outcomes",
+  "pairs": {
+    "base__base_skill": {
+      "n": 263,
+      "baseline": 0.6128402438288371,
+      "comparison": 0.5920091737582233,
+      "delta": -0.020831070070613786,
+      "gain": -0.0538048434491843,
+      "ci": [
+        -0.08300604018622885,
+        0.03875186102775257
+      ],
+      "wins_ties_losses": [
+        76,
+        106,
+        81
+      ],
+      "complete_pair_n": 248,
+      "complete_pair_delta": -0.030379544290834608,
+      "unflagged_pair_n": 172,
+      "unflagged_pair_delta": -0.03483296419342931,
+      "cluster_count": 30
+    },
+    "base__sft": {
+      "n": 263,
+      "baseline": 0.6128402438288371,
+      "comparison": 0.5773764258555134,
+      "delta": -0.03546381797332367,
+      "gain": -0.09159995946904449,
+      "ci": [
+        -0.09649346827447601,
+        0.021023502211002177
+      ],
+      "wins_ties_losses": [
+        85,
+        90,
+        88
+      ],
+      "complete_pair_n": 238,
+      "complete_pair_delta": -0.031072428971588628,
+      "unflagged_pair_n": 168,
+      "unflagged_pair_delta": 0.011092214663643235,
+      "cluster_count": 30
+    },
+    "base_skill__sft": {
+      "n": 263,
+      "baseline": 0.5920091737582233,
+      "comparison": 0.5773764258555134,
+      "delta": -0.014632747902709875,
+      "gain": -0.03586538461538461,
+      "ci": [
+        -0.07970458637850815,
+        0.048955950200414204
+      ],
+      "wins_ties_losses": [
+        89,
+        85,
+        89
+      ],
+      "complete_pair_n": 243,
+      "complete_pair_delta": 0.022708864066888754,
+      "unflagged_pair_n": 162,
+      "unflagged_pair_delta": 0.02483833039388595,
+      "cluster_count": 30
+    },
+    "base__grpo": {
+      "n": 263,
+      "baseline": 0.6128402438288371,
+      "comparison": 0.6068803186673909,
+      "delta": -0.005959925161446077,
+      "ci": [
+        -0.06444018682761021,
+        0.05048893734230153
+      ],
+      "complete_pair_n": 227,
+      "complete_pair_delta": 0.021117404377316275,
+      "cluster_count": 30,
+      "wins_ties_losses": [
+        82,
+        98,
+        83
+      ]
+    },
+    "base_skill__grpo": {
+      "n": 263,
+      "baseline": 0.5920091737582233,
+      "comparison": 0.6068803186673909,
+      "delta": 0.014871144909167723,
+      "ci": [
+        -0.04980425371729719,
+        0.078726826608506
+      ],
+      "complete_pair_n": 234,
+      "complete_pair_delta": 0.06349884683218016,
+      "cluster_count": 30,
+      "wins_ties_losses": [
+        95,
+        90,
+        78
+      ]
+    },
+    "sft__grpo": {
+      "n": 263,
+      "baseline": 0.5773764258555134,
+      "comparison": 0.6068803186673909,
+      "delta": 0.029503892811877593,
+      "ci": [
+        -0.025753135789519693,
+        0.08905077333131839
+      ],
+      "complete_pair_n": 222,
+      "complete_pair_delta": 0.05408622908622909,
+      "cluster_count": 30,
+      "wins_ties_losses": [
+        93,
+        96,
+        74
+      ]
+    }
+  },
+  "skill_results": [
+    {
+      "arm": "base",
+      "skill": "adaptive-hint-sequence-designer",
+      "n": 20,
+      "mean": 0.675,
+      "failure_count": 1
+    },
+    {
+      "arm": "base",
+      "skill": "backwards-design-unit-planner",
+      "n": 10,
+      "mean": 0.72,
+      "failure_count": 0
+    },
+    {
+      "arm": "base",
+      "skill": "differentiation-adapter",
+      "n": 30,
+      "mean": 0.5555555555555556,
+      "failure_count": 0
+    },
+    {
+      "arm": "base",
+      "skill": "hinge-question-designer",
+      "n": 9,
+      "mean": 0.8,
+      "failure_count": 0
+    },
+    {
+      "arm": "base",
+      "skill": "lesson-builder",
+      "n": 154,
+      "mean": 0.5836631622345908,
+      "failure_count": 8
+    },
+    {
+      "arm": "base",
+      "skill": "project-brief-designer",
+      "n": 16,
+      "mean": 0.6558035714285715,
+      "failure_count": 0
+    },
+    {
+      "arm": "base",
+      "skill": "retrieval-practice-generator",
+      "n": 8,
+      "mean": 0.6875,
+      "failure_count": 1
+    },
+    {
+      "arm": "base",
+      "skill": "self-efficacy-builder-sequence",
+      "n": 6,
+      "mean": 0.7777777777777778,
+      "failure_count": 0
+    },
+    {
+      "arm": "base",
+      "skill": "socratic-questioning-sequence-generator",
+      "n": 10,
+      "mean": 0.6066666666666667,
+      "failure_count": 1
+    },
+    {
+      "arm": "base_skill",
+      "skill": "adaptive-hint-sequence-designer",
+      "n": 20,
+      "mean": 0.6928571428571428,
+      "failure_count": 2
+    },
+    {
+      "arm": "base_skill",
+      "skill": "backwards-design-unit-planner",
+      "n": 10,
+      "mean": 0.3333333333333333,
+      "failure_count": 0
+    },
+    {
+      "arm": "base_skill",
+      "skill": "differentiation-adapter",
+      "n": 30,
+      "mean": 0.5527777777777778,
+      "failure_count": 0
+    },
+    {
+      "arm": "base_skill",
+      "skill": "hinge-question-designer",
+      "n": 9,
+      "mean": 0.6222222222222222,
+      "failure_count": 0
+    },
+    {
+      "arm": "base_skill",
+      "skill": "lesson-builder",
+      "n": 154,
+      "mean": 0.5845908060193774,
+      "failure_count": 2
+    },
+    {
+      "arm": "base_skill",
+      "skill": "project-brief-designer",
+      "n": 16,
+      "mean": 0.6098214285714286,
+      "failure_count": 0
+    },
+    {
+      "arm": "base_skill",
+      "skill": "retrieval-practice-generator",
+      "n": 8,
+      "mean": 0.8958333333333334,
+      "failure_count": 0
+    },
+    {
+      "arm": "base_skill",
+      "skill": "self-efficacy-builder-sequence",
+      "n": 6,
+      "mean": 0.5,
+      "failure_count": 0
+    },
+    {
+      "arm": "base_skill",
+      "skill": "socratic-questioning-sequence-generator",
+      "n": 10,
+      "mean": 0.6373809523809524,
+      "failure_count": 0
+    },
+    {
+      "arm": "sft",
+      "skill": "adaptive-hint-sequence-designer",
+      "n": 20,
+      "mean": 0.7119047619047619,
+      "failure_count": 0
+    },
+    {
+      "arm": "sft",
+      "skill": "backwards-design-unit-planner",
+      "n": 10,
+      "mean": 0.57,
+      "failure_count": 2
+    },
+    {
+      "arm": "sft",
+      "skill": "differentiation-adapter",
+      "n": 30,
+      "mean": 0.5527777777777778,
+      "failure_count": 0
+    },
+    {
+      "arm": "sft",
+      "skill": "hinge-question-designer",
+      "n": 9,
+      "mean": 0.8444444444444444,
+      "failure_count": 0
+    },
+    {
+      "arm": "sft",
+      "skill": "lesson-builder",
+      "n": 154,
+      "mean": 0.5566790352504638,
+      "failure_count": 12
+    },
+    {
+      "arm": "sft",
+      "skill": "project-brief-designer",
+      "n": 16,
+      "mean": 0.42142857142857143,
+      "failure_count": 0
+    },
+    {
+      "arm": "sft",
+      "skill": "retrieval-practice-generator",
+      "n": 8,
+      "mean": 0.3125,
+      "failure_count": 3
+    },
+    {
+      "arm": "sft",
+      "skill": "self-efficacy-builder-sequence",
+      "n": 6,
+      "mean": 0.9444444444444444,
+      "failure_count": 0
+    },
+    {
+      "arm": "sft",
+      "skill": "socratic-questioning-sequence-generator",
+      "n": 10,
+      "mean": 0.709047619047619,
+      "failure_count": 0
+    },
+    {
+      "arm": "grpo",
+      "skill": "adaptive-hint-sequence-designer",
+      "n": 20,
+      "mean": 0.7916666666666666,
+      "failure_count": 0
+    },
+    {
+      "arm": "grpo",
+      "skill": "backwards-design-unit-planner",
+      "n": 10,
+      "mean": 0.59,
+      "failure_count": 2
+    },
+    {
+      "arm": "grpo",
+      "skill": "differentiation-adapter",
+      "n": 30,
+      "mean": 0.4027777777777778,
+      "failure_count": 5
+    },
+    {
+      "arm": "grpo",
+      "skill": "hinge-question-designer",
+      "n": 9,
+      "mean": 0.7777777777777778,
+      "failure_count": 0
+    },
+    {
+      "arm": "grpo",
+      "skill": "lesson-builder",
+      "n": 154,
+      "mean": 0.58634817563389,
+      "failure_count": 15
+    },
+    {
+      "arm": "grpo",
+      "skill": "project-brief-designer",
+      "n": 16,
+      "mean": 0.6017857142857143,
+      "failure_count": 2
+    },
+    {
+      "arm": "grpo",
+      "skill": "retrieval-practice-generator",
+      "n": 8,
+      "mean": 0.7291666666666666,
+      "failure_count": 1
+    },
+    {
+      "arm": "grpo",
+      "skill": "self-efficacy-builder-sequence",
+      "n": 6,
+      "mean": 1.0,
+      "failure_count": 0
+    },
+    {
+      "arm": "grpo",
+      "skill": "socratic-questioning-sequence-generator",
+      "n": 10,
+      "mean": 0.7033333333333334,
+      "failure_count": 1
+    }
+  ],
+  "arms": {
+    "base": {
+      "n": 263,
+      "mean": 0.612840243828837,
+      "strict_pass": 0.39543726235741444,
+      "failure_count": 11,
+      "review_flags": 38
+    },
+    "base_skill": {
+      "n": 263,
+      "mean": 0.5920091737582232,
+      "strict_pass": 0.34220532319391633,
+      "failure_count": 4,
+      "review_flags": 56
+    },
+    "sft": {
+      "n": 263,
+      "mean": 0.5773764258555133,
+      "strict_pass": 0.3650190114068441,
+      "failure_count": 17,
+      "review_flags": 48
+    },
+    "grpo": {
+      "n": 263,
+      "mean": 0.6068803186673909,
+      "strict_pass": 0.4144486692015209,
+      "failure_count": 26,
+      "review_flags": 46
+    }
+  },
+  "generation_environment": "existing Docker/OpenCode, not upstream direct Chat",
+  "comparison_caveat": "Pro final-answer scores must not be mixed with old Flash full-trajectory scores"
+}
