@@ -1,0 +1,132 @@
+{
+  "type": "object",
+  "properties": {
+    "reviewed_units": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "claim_quote": {
+            "type": "string"
+          },
+          "condition_quotes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "math",
+              "science_fact",
+              "answer_key",
+              "explicit_constraint"
+            ]
+          },
+          "suspected_error": {
+            "type": "string"
+          },
+          "recomputation": {
+            "type": "string"
+          },
+          "rubric_links": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "criterion_quote": {
+                  "type": "string"
+                },
+                "dependency": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "criterion_quote",
+                "dependency"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "calculation": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "lhs": {
+                    "type": "string"
+                  },
+                  "rhs": {
+                    "type": "string"
+                  },
+                  "variables": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "string"
+                    }
+                  },
+                  "binding_quotes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "minItems": 1
+                  }
+                },
+                "required": [
+                  "lhs",
+                  "rhs",
+                  "variables",
+                  "binding_quotes"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "claim_quote",
+          "condition_quotes",
+          "kind",
+          "suspected_error",
+          "recomputation",
+          "rubric_links",
+          "calculation"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 32
+    }
+  },
+  "required": [
+    "reviewed_units",
+    "limitations",
+    "findings"
+  ],
+  "additionalProperties": false
+}

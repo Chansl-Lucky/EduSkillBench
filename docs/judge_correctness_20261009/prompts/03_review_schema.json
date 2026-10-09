@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "properties": {
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "confirmed",
+              "dismissed",
+              "uncertain"
+            ]
+          },
+          "stance": {
+            "type": "string",
+            "enum": [
+              "endorsed",
+              "student_error",
+              "corrected",
+              "assumption",
+              "unknown"
+            ]
+          },
+          "proof": {
+            "type": "string"
+          },
+          "affected_dimensions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "mapping_reason": {
+            "type": "string"
+          },
+          "calculator_binding_valid": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "decision",
+          "stance",
+          "proof",
+          "affected_dimensions",
+          "mapping_reason",
+          "calculator_binding_valid"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "findings"
+  ],
+  "additionalProperties": false
+}

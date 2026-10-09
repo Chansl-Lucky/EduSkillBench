@@ -1,5 +1,16 @@
 # EduSkillBench
 
+## Judge correctness audit (2026-10-09)
+
+This branch also includes a separately versioned, correctness-sensitive judging
+ablation for frozen answers. Original rubrics, grade levels and aggregation stay
+unchanged; the added evidence scans and dimension-only deductions are **not** an
+unchanged reproduction of the original judge.
+
+Review: **[Judge变化、限制及本次Git范围](docs/JUDGE_CHANGE_REVIEW_2026-10-09.md)**.
+Offline tests, exact prompts, Ark resume and runtime dependencies:
+**[Judge复核与接续说明](repro/judge_correctness/README.md)**.
+
 ## Native task-scoped Skill evaluation
 
 This branch provides the Docker/OpenCode environment for autonomous use of a

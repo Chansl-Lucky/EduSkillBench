@@ -1,0 +1,20 @@
+{
+  "transport_only": true,
+  "activation_status": "streaming_verified_background_resumed_20261009_215030_CST",
+  "endpoint": "https://ark.cn-beijing.volces.com/api/v3/chat/completions",
+  "credential_environment_variable": "LLM_API_KEY",
+  "preferred_request_model": "deepseek-v4-pro-ga-260813",
+  "required_response_model": "deepseek-v4-pro-ga-260813",
+  "thinking": "disabled",
+  "max_output_tokens": 10000,
+  "concurrency_capacity": 64,
+  "proxy_environment_variable": "ARK_SCORING_PROXY",
+  "existing_proxy": "http://127.0.0.1:38790",
+  "independent_of_client_sleep": false,
+  "outage_policy": "shared reachability probe; wait without inference while offline; resume unresolved same request when proxy returns",
+  "resume_entrypoint": "code/evaluation/resume_glm305_ark_standard_20261009.py",
+  "resume_output_directory": "artifacts/glm305_comprehensive_pro_20261009_r4",
+  "accepted_result_policy": "immutable; reuse accepted result/scan/review caches; resume unresolved only",
+  "rubric_prompt_or_data_changes": false,
+  "url_note": "Pinned judge URL builder treats /v3 as needing /v1; use the exact full chat/completions endpoint in ANTHROPIC_BASE_URL when adding the process-local transport adapter. Do not call /api/v3/v1/chat/completions."
+}

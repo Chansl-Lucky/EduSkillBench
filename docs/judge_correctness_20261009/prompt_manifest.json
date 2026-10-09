@@ -1,0 +1,16 @@
+{
+  "kind": "fixed-instruction-export-not-live-request",
+  "dynamic_input": "one complete question, original applicable rubric, one frozen final answer with E/Q evidence IDs; never arm/model/old score",
+  "files": {
+    "docs/judge_correctness_20261009/prompts/03_review_schema.json": "b9f83d1f2badbaf9bab15c9d480c187548555504043d73c6dc699523ac0b3231",
+    "docs/judge_correctness_20261009/prompts/02_comprehensive_schema.json": "4b0ed5703e2ec9245b6a0f9db43bdb8db5f2f58a5c6b51bd042345fb2c7b56d4",
+    "docs/judge_correctness_20261009/prompts/02_comprehensive_scan.txt": "86a20c377e5d8c451f42f6b2e0233d40dd97ca4894e5dcf028cbfaeafa49b83b",
+    "docs/judge_correctness_20261009/prompts/03_effective_review.txt": "5ab4fad7b508d9b73a92eda9aab00a335bbf9c2e638d138be1b5e1485b33de68",
+    "docs/judge_correctness_20261009/prompts/01_primary_scan.txt": "71e517f2aee948b12ba42d707444a4b694bf3e1525a2eba0e0717dc549d92fdb",
+    "docs/judge_correctness_20261009/prompts/01_primary_schema.json": "658be6350cfd26a48b24e6cfbf09f59e9954bc02642c3a3b3176956156091cca",
+    "code/evaluation/rescore_advisory263_pro_20261007.py": "e6a0802185de81307e6832cc871eb2c55dc8c7cd5c92c93d472efa34293da85b",
+    "code/evaluation/rescore_glm305_correctness_20261009.py": "a9c2c3e6cc0bf782811b8130505d66e1a996b0660e33455f2065e9e6db843d35",
+    "code/evaluation/rescore_glm305_comprehensive_grounded_20261009.py": "8907bb71c5ee39499f426f8354c3a2b776dfdac59ea41230426c47cc1c07ab69",
+    "code/evaluation/resume_glm305_ark_standard_20261009.py": "9799c6ba1e2e33db775b8fe742b9e3a47f5e791fdec3324212beccd279ede67d"
+  }
+}

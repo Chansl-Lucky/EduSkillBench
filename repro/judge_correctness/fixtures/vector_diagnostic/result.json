@@ -1,0 +1,345 @@
+{
+  "arm": "base",
+  "task_id": "lesson-builder__cn24_09",
+  "binding": "eaaf2a9d9686b26278f9883599b96722129b031e2f2249f511b93d69e89bd11b",
+  "status": "evaluated",
+  "judge_requested": "deepseek-v4-pro",
+  "judge_model": "deepseek-v4-pro-ga-260813",
+  "raw_verdict": {
+    "items": [
+      {
+        "counterevidence": "",
+        "evidence": "E4,E5,E6",
+        "id": "D1",
+        "level": "满足",
+        "reason": "回答明确构建了“目标：几何位置关系→向量关系→坐标关系→代数方程”的倒推链条，并在每道例题中从目标出发依次追问“问构造、问表示、问转化”，展示如何观察条件并选择共线定理的坐标式，并非直接给出解法。"
+      },
+      {
+        "counterevidence": "",
+        "evidence": "E4,E5,E6,E20,E21",
+        "id": "D2",
+        "level": "满足",
+        "reason": "回答总结了可迁移的通用倒推框架，并将其归纳为“验证型、求参型、综合型”三类产出，同时强调“方法不变、只是终点不同”，在例3中进一步追问变式让学生体会同一套流程的可复用性。"
+      },
+      {
+        "counterevidence": "",
+        "evidence": "E6,E10,E14,E19,E21,E22",
+        "id": "D3",
+        "level": "满足",
+        "reason": "回答多次设置对学生的追问，如从目标出发的三问、提醒学生构造向量时的易错点、追问“若把直线改为y=2x-1呢”以及专设边界讨论环节让学生发现零向量条款的必要性，明显不是教师自问自答。"
+      },
+      {
+        "counterevidence": "",
+        "evidence": "E2,E3,E10,E14,E19",
+        "id": "D4",
+        "level": "满足",
+        "reason": "回答在提出共线定理坐标式后交代了基向量非零的适用条件，在例1中说明了为什么构造AB与AC需要公共起点，在例2中回代检验零向量边界，并在例3中澄清P与B重合是几何事实，区分了构造步骤与论证依据。"
+      }
+    ]
+  },
+  "verdict": {
+    "status": "evaluated",
+    "protocol": "source-native-v1",
+    "items": [
+      {
+        "counterevidence": "",
+        "evidence": "E4,E5,E6",
+        "id": "D1",
+        "level": "满足",
+        "reason": "回答明确构建了“目标：几何位置关系→向量关系→坐标关系→代数方程”的倒推链条，并在每道例题中从目标出发依次追问“问构造、问表示、问转化”，展示如何观察条件并选择共线定理的坐标式，并非直接给出解法。",
+        "criterion": "1. 思维可视化：暴露选择方法的过程",
+        "original_weight": null,
+        "evidence_spans": [
+          {
+            "id": "E4",
+            "start": 480,
+            "end": 640,
+            "text": "**，这就是它在解析几何中威力的来源——位置关系 → 代数条件，可以参与运算。\n\n## 二、“目标倒推”的思维框架（讲解主线）\n\n向学生呈现一个统一的倒推链条。解析几何中凡是出现“平行、共线、过定点、三点在一条直线上”这类**方向型目标**，都走同一条路：\n\n```\n目标：几何位置关系（A、B、C 三点共线 / 直线 "
+          },
+          {
+            "id": "E5",
+            "start": 640,
+            "end": 800,
+            "text": "l∥AB）\n  ↓ 倒推①（翻译）：位置关系 ⇒ 向量关系 —— 构造两个向量，如 AB 与 AC\n  ↓ 倒推②（表示）：向量关系 ⇒ 坐标关系 —— AB 与 AC 各用坐标表示\n  ↓ 倒推③（计算）：坐标关系 ⇒ 代数方程 —— x₁y₂ = x₂y₁ 或 b = λa\n  ↓ （求解）：解出参数 / 得到结论"
+          },
+          {
+            "id": "E6",
+            "start": 800,
+            "end": 960,
+            "text": "\n```\n\n教师讲解每一道例题时，都**从“目标”出发问三个问题**：\n\n- **问构造**：要证的几何对象天然对应哪两个向量？（取两点作差构造）\n- **问表示**：这两个向量的坐标我算得出来吗？缺什么条件？\n- **问转化**：代入 $x_1y_2 = x_2y_1$ 后，剩下的是方程还是恒等式？\n\n前两个问号决定"
+          }
+        ],
+        "counterevidence_spans": []
+      },
+      {
+        "counterevidence": "",
+        "evidence": "E4,E5,E6,E20,E21",
+        "id": "D2",
+        "level": "满足",
+        "reason": "回答总结了可迁移的通用倒推框架，并将其归纳为“验证型、求参型、综合型”三类产出，同时强调“方法不变、只是终点不同”，在例3中进一步追问变式让学生体会同一套流程的可复用性。",
+        "criterion": "2. 方法模型化：提炼通用策略",
+        "original_weight": null,
+        "evidence_spans": [
+          {
+            "id": "E4",
+            "start": 480,
+            "end": 640,
+            "text": "**，这就是它在解析几何中威力的来源——位置关系 → 代数条件，可以参与运算。\n\n## 二、“目标倒推”的思维框架（讲解主线）\n\n向学生呈现一个统一的倒推链条。解析几何中凡是出现“平行、共线、过定点、三点在一条直线上”这类**方向型目标**，都走同一条路：\n\n```\n目标：几何位置关系（A、B、C 三点共线 / 直线 "
+          },
+          {
+            "id": "E5",
+            "start": 640,
+            "end": 800,
+            "text": "l∥AB）\n  ↓ 倒推①（翻译）：位置关系 ⇒ 向量关系 —— 构造两个向量，如 AB 与 AC\n  ↓ 倒推②（表示）：向量关系 ⇒ 坐标关系 —— AB 与 AC 各用坐标表示\n  ↓ 倒推③（计算）：坐标关系 ⇒ 代数方程 —— x₁y₂ = x₂y₁ 或 b = λa\n  ↓ （求解）：解出参数 / 得到结论"
+          },
+          {
+            "id": "E6",
+            "start": 800,
+            "end": 960,
+            "text": "\n```\n\n教师讲解每一道例题时，都**从“目标”出发问三个问题**：\n\n- **问构造**：要证的几何对象天然对应哪两个向量？（取两点作差构造）\n- **问表示**：这两个向量的坐标我算得出来吗？缺什么条件？\n- **问转化**：代入 $x_1y_2 = x_2y_1$ 后，剩下的是方程还是恒等式？\n\n前两个问号决定"
+          },
+          {
+            "id": "E20",
+            "start": 3040,
+            "end": 3200,
+            "text": "的解法作对比：两个坐标方程解 $\\lambda$ 与 $t$，说明坐标式在这里“少一个未知数”，更经济。\n\n## 四、课堂组织建议\n\n1. **先给框架再给题**：先在黑板上立起“位置关系 → 向量关系 → 坐标关系 → 代数方程”的倒推链条，三道例题分别对应链条的“验证型、求参型、综合型”三种产出，让学生看到**方法"
+          },
+          {
+            "id": "E21",
+            "start": 3200,
+            "end": 3360,
+            "text": "不变、只是终点不同**。\n2. **每题都从终点提问**：不要先算后看结论，而是先问“最后我要得到什么？为此我需要什么？”——这符合本设计“围绕目标倒推所需条件”的立意。\n3. **专设一个“边界讨论”环节**：例 2 之后安排一道会产生零向量争议的变式，让学生自己发现定理里 \"$\\vec{a} \\neq \\vec{0"
+          }
+        ],
+        "counterevidence_spans": []
+      },
+      {
+        "counterevidence": "",
+        "evidence": "E6,E10,E14,E19,E21,E22",
+        "id": "D3",
+        "level": "满足",
+        "reason": "回答多次设置对学生的追问，如从目标出发的三问、提醒学生构造向量时的易错点、追问“若把直线改为y=2x-1呢”以及专设边界讨论环节让学生发现零向量条款的必要性，明显不是教师自问自答。",
+        "criterion": "3. 学生参与度：引导学生“开口”",
+        "original_weight": null,
+        "evidence_spans": [
+          {
+            "id": "E6",
+            "start": 800,
+            "end": 960,
+            "text": "\n```\n\n教师讲解每一道例题时，都**从“目标”出发问三个问题**：\n\n- **问构造**：要证的几何对象天然对应哪两个向量？（取两点作差构造）\n- **问表示**：这两个向量的坐标我算得出来吗？缺什么条件？\n- **问转化**：代入 $x_1y_2 = x_2y_1$ 后，剩下的是方程还是恒等式？\n\n前两个问号决定"
+          },
+          {
+            "id": "E10",
+            "start": 1440,
+            "end": 1600,
+            "text": "生易错处）**：若取 $\\overrightarrow{AB}$ 与 $\\overrightarrow{BC}$，也共线，但坐标不同——提醒学生**构造哪两个向量都行，只要它们都含“同一个公共点”**；特别地不能取 $\\overrightarrow{AB}$ 与 $\\overrightarrow{CD}$ 这种无公共点"
+          },
+          {
+            "id": "E14",
+            "start": 2080,
+            "end": 2240,
+            "text": "\\vec{b} = (2,3)$，均为非零向量 ✓；$m = -2$ 时 $\\vec{a} = (2,-2)$，$\\vec{b} = (-3, 3)$，非零 ✓。两解均保留。\n\n**讲解要点**：必须强调**若解出参数使某个向量为零向量，需单独讨论**——例如把题目改为 $\\vec{a} = (m, 1)$，$\\vec"
+          },
+          {
+            "id": "E19",
+            "start": 2880,
+            "end": 3040,
+            "text": " $y = x+1$ 交点若还有第三个公共点则两线重合。可顺势追问学生：“若把直线改为 $y = 2x - 1$ 呢？”让学生重走一遍链条（答案 $P(2, 3)$），体会**同一套倒推流程的可复用性**。也可展示 $\\overrightarrow{AP} = \\lambda \\overrightarrow{AB}$ "
+          },
+          {
+            "id": "E21",
+            "start": 3200,
+            "end": 3360,
+            "text": "不变、只是终点不同**。\n2. **每题都从终点提问**：不要先算后看结论，而是先问“最后我要得到什么？为此我需要什么？”——这符合本设计“围绕目标倒推所需条件”的立意。\n3. **专设一个“边界讨论”环节**：例 2 之后安排一道会产生零向量争议的变式，让学生自己发现定理里 \"$\\vec{a} \\neq \\vec{0"
+          },
+          {
+            "id": "E22",
+            "start": 3360,
+            "end": 3478,
+            "text": "}$\" 不是废话。\n4. **板书对照**：左侧固定写倒推链条，右侧解题过程每一步标注它对应链条的哪一环，帮助学生把流程内化。\n\n以上教学设计未涉及任何具体班级的学情信息；若学生基础较弱，可先只讲例 1、例 2，把例 3 留作第二课时。"
+          }
+        ],
+        "counterevidence_spans": []
+      },
+      {
+        "counterevidence": "",
+        "evidence": "E2,E3,E10,E14,E19",
+        "id": "D4",
+        "level": "满足",
+        "reason": "回答在提出共线定理坐标式后交代了基向量非零的适用条件，在例1中说明了为什么构造AB与AC需要公共起点，在例2中回代检验零向量边界，并在例3中澄清P与B重合是几何事实，区分了构造步骤与论证依据。",
+        "criterion": "4. 逻辑严密性：区分提出步骤与论证依据",
+        "original_weight": null,
+        "evidence_spans": [
+          {
+            "id": "E2",
+            "start": 160,
+            "end": 320,
+            "text": "标形式：设 $\\vec{a} = (x_1, y_1)$，$\\vec{b} = (x_2, y_2)$，则\n\n$$\\vec{a} \\parallel \\vec{b} \\iff x_1 y_2 - x_2 y_1 = 0.$$\n\n讲解时必须向学生交代清楚两条“适用边界”，否则后面解题会翻车：\n\n1. **基向量必须非零*"
+          },
+          {
+            "id": "E3",
+            "start": 320,
+            "end": 480,
+            "text": "*：$\\lambda \\vec{a} = \\vec{b}$ 中 $\\vec{a} \\neq \\vec{0}$，否则 $\\lambda$ 不唯一（零向量与任意向量共线，但无法用它“表示”出方向信息）。\n2. **坐标式是一个方程**：$x_1y_2 - x_2y_1 = 0$ 把“平行”这个几何关系压缩成**一个代数方程"
+          },
+          {
+            "id": "E10",
+            "start": 1440,
+            "end": 1600,
+            "text": "生易错处）**：若取 $\\overrightarrow{AB}$ 与 $\\overrightarrow{BC}$，也共线，但坐标不同——提醒学生**构造哪两个向量都行，只要它们都含“同一个公共点”**；特别地不能取 $\\overrightarrow{AB}$ 与 $\\overrightarrow{CD}$ 这种无公共点"
+          },
+          {
+            "id": "E14",
+            "start": 2080,
+            "end": 2240,
+            "text": "\\vec{b} = (2,3)$，均为非零向量 ✓；$m = -2$ 时 $\\vec{a} = (2,-2)$，$\\vec{b} = (-3, 3)$，非零 ✓。两解均保留。\n\n**讲解要点**：必须强调**若解出参数使某个向量为零向量，需单独讨论**——例如把题目改为 $\\vec{a} = (m, 1)$，$\\vec"
+          },
+          {
+            "id": "E19",
+            "start": 2880,
+            "end": 3040,
+            "text": " $y = x+1$ 交点若还有第三个公共点则两线重合。可顺势追问学生：“若把直线改为 $y = 2x - 1$ 呢？”让学生重走一遍链条（答案 $P(2, 3)$），体会**同一套倒推流程的可复用性**。也可展示 $\\overrightarrow{AP} = \\lambda \\overrightarrow{AB}$ "
+          }
+        ],
+        "counterevidence_spans": []
+      }
+    ],
+    "score": null,
+    "score_interval": null,
+    "excluded_ids": [],
+    "score_note": "未指定等级转分，不生成虚构单点总分。无原文等级的满足状态仅用于逐项核查。"
+  },
+  "report_score": 1.0,
+  "strict_pass": true,
+  "failure_zero": false,
+  "metadata": {
+    "trace_version": 1,
+    "started_utc": "2026-10-08T16:40:51Z",
+    "model": "deepseek-v4-pro",
+    "prompt_chars": 6767,
+    "prompt_bytes": 12622,
+    "prompt_sha256": "1ee9e2f3db7f5431550bdc0e0ac5ba36351deaf011426c7f91b2b3f859eceb0c",
+    "request_settings": {
+      "max_tokens": 10000,
+      "thinking": {
+        "type": "disabled"
+      },
+      "stream": true,
+      "stream_options": {
+        "include_usage": true
+      },
+      "response_format": {
+        "type": "json_schema",
+        "json_schema": {
+          "name": "verdict",
+          "strict": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "items": {
+                "type": "array",
+                "minItems": 4,
+                "maxItems": 4,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "enum": [
+                        "D1",
+                        "D2",
+                        "D3",
+                        "D4"
+                      ]
+                    },
+                    "counterevidence": {
+                      "type": "string",
+                      "maxLength": 240,
+                      "pattern": "^(?:E[1-9][0-9]*(?:,E[1-9][0-9]*)*)?$"
+                    },
+                    "level": {
+                      "type": "string",
+                      "enum": [
+                        "未满足",
+                        "满足",
+                        "部分满足"
+                      ]
+                    },
+                    "evidence": {
+                      "type": "string",
+                      "maxLength": 240,
+                      "pattern": "^(?:E[1-9][0-9]*(?:,E[1-9][0-9]*)*)?$"
+                    },
+                    "reason": {
+                      "type": "string",
+                      "maxLength": 800
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "counterevidence",
+                    "level",
+                    "evidence",
+                    "reason"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "items"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    "stage": "receiving_text",
+    "status": "response_received",
+    "events": {},
+    "received_bytes": 23563,
+    "thinking_chars": 0,
+    "text_chars": 939,
+    "max_line_gap_seconds": 0.341,
+    "max_content_gap_seconds": 0.341,
+    "transport_route": "explicit_ark_proxy",
+    "api_protocol": "chat_completions",
+    "request_url": "https://ark.cn-beijing.volces.com/api/plan/v1/chat/completions",
+    "timeouts_seconds": {
+      "headers": 45.0,
+      "idle": 45.0,
+      "content_idle": 60.0,
+      "total": 120.0
+    },
+    "headers_seconds": 1.487,
+    "http_status": 200,
+    "content_type": "text/event-stream",
+    "x-request-id": "021791477652092b4a50cd25f47d4bb7d101bbb29abc519d4ac4b",
+    "first_line_seconds": 1.489,
+    "last_line_seconds": 5.866,
+    "response_model": "deepseek-v4-pro-ga-260813",
+    "request_id": "021791477652092b4a50cd25f47d4bb7d101bbb29abc519d4ac4b",
+    "first_content_seconds": 1.489,
+    "first_text_seconds": 1.489,
+    "last_content_seconds": 5.866,
+    "usage": {
+      "completion_tokens": 436,
+      "prompt_tokens": 3757,
+      "total_tokens": 4193,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "elapsed_seconds": 5.868,
+    "since_last_line_seconds": 0.002,
+    "since_last_content_seconds": 0.002,
+    "stop_reason": "end_turn",
+    "block_types": [
+      "text"
+    ]
+  },
+  "elapsed_seconds": 5.87
+}
