@@ -1,5 +1,17 @@
 # EduSkillBench
 
+## Native task-scoped Skill evaluation
+
+This branch provides the Docker/OpenCode environment for autonomous use of a
+task-local candidate Skill package. Skill text is not forcibly inserted into the
+question; the agent decides whether and how to use the exposed resources.
+
+Installation, frozen configuration, GLM/Qwen execution, judging and routing logs:
+**[原生候选技能包运行说明](repro/native_skill/README.md)**.
+The current task snapshot is **[305题](data/exports/eduskillbench-305-20261003/README.md)**.
+Existing experiment reports below remain historical artifacts, not results of
+the new native-access entry point.
+
 **EduSkillBench** is a benchmark for evaluating whether reusable educational agent Skills improve the performance of large language models on realistic education tasks.
 
 The benchmark collects publicly available education-oriented Agent Skills, maps them to educational scenarios inspired by EduBench, constructs Skill-aligned tasks and rubrics, and compares **With-Skill** against **No-Skill** execution.
